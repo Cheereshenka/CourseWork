@@ -10,7 +10,6 @@ void flight_stairs_output();
 double flight_stairs_calc(int numFlight, int numPlate);
 
 void save_to_file(char* filename);
-void load_from_file(char filename[100]);
 
 typedef struct {
     double plateLength;
@@ -48,18 +47,18 @@ int main()
 
     int choice;
 
-    printf("Программа для расчёта количества плиток для облицовки ступенек или площадки.\n\n");
+    printf("ГЏГ°Г®ГЈГ°Г Г¬Г¬Г  Г¤Г«Гї Г°Г Г±Г·ВёГІГ  ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГЇГ«ГЁГІГ®ГЄ Г¤Г«Гї Г®ГЎГ«ГЁГ¶Г®ГўГЄГЁ Г±ГІГіГЇГҐГ­ГҐГЄ ГЁГ«ГЁ ГЇГ«Г®Г№Г Г¤ГЄГЁ.\n\n");
 
     do
     {
-        printf("\nМеню:\n");
-        printf("1. Создать ступени\n");
-        printf("2. Создать площадки\n");
-        printf("3. Созданные лестницы\n");
-        printf("4. Созданные площадки\n");
-        printf("5. Сохранить данные в файл\n");
-        printf("0. Выйти\n");
-        printf("Выберите действие: \n");
+        printf("\nГЊГҐГ­Гѕ:\n");
+        printf("1. Г‘Г®Г§Г¤Г ГІГј Г±ГІГіГЇГҐГ­ГЁ\n");
+        printf("2. Г‘Г®Г§Г¤Г ГІГј ГЇГ«Г®Г№Г Г¤ГЄГЁ\n");
+        printf("3. Г‘Г®Г§Г¤Г Г­Г­Г»ГҐ Г«ГҐГ±ГІГ­ГЁГ¶Г»\n");
+        printf("4. Г‘Г®Г§Г¤Г Г­Г­Г»ГҐ ГЇГ«Г®Г№Г Г¤ГЄГЁ\n");
+        printf("5. Г‘Г®ГµГ°Г Г­ГЁГІГј Г¤Г Г­Г­Г»ГҐ Гў ГґГ Г©Г«\n");
+        printf("0. Г‚Г»Г©ГІГЁ\n");
+        printf("Г‚Г»ГЎГҐГ°ГЁГІГҐ Г¤ГҐГ©Г±ГІГўГЁГҐ: \n");
         scanf("%d", &choice);
 
         switch (choice)
@@ -73,40 +72,40 @@ int main()
             break;
 
         case 3:
-            if (numStairs == 0) printf("Нет лестниц.\n");
+            if (numStairs == 0) printf("ГЌГҐГІ Г«ГҐГ±ГІГ­ГЁГ¶.\n");
             else
             {
-                printf("\nИнформация о лестницах:\n");
+                printf("\nГ€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г«ГҐГ±ГІГ­ГЁГ¶Г Гµ:\n");
                 for (int i = 0; i < numStairs; i++)
                 {
-                    printf("Лестница %d\n", i + 1);
-                    printf("Высота ступеньки: %d м.\n", objectsStairs[i].stepHeight);
-                    printf("Ширина ступеньки: %d м.\n", objectsStairs[i].stepWidth);
-                    printf("Длина ступеньки: %d м.\n", objectsStairs[i].stepLength);
-                    printf("Количество ступенек: %d\n", objectsStairs[i].stepAmount);
+                    printf("Г‹ГҐГ±ГІГ­ГЁГ¶Г  %d\n", i + 1);
+                    printf("Г‚Г»Г±Г®ГІГ  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %d Г¬.\n", objectsStairs[i].stepHeight);
+                    printf("ГГЁГ°ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %d Г¬.\n", objectsStairs[i].stepWidth);
+                    printf("Г„Г«ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %d Г¬.\n", objectsStairs[i].stepLength);
+                    printf("ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГіГЇГҐГ­ГҐГЄ: %d\n", objectsStairs[i].stepAmount);
                     printf("\n");
                 }
             }
             break;
 
         case 4:
-            if (numFlight == 0) printf("Нет площадок.\n");
+            if (numFlight == 0) printf("ГЌГҐГІ ГЇГ«Г®Г№Г Г¤Г®ГЄ.\n");
             else
             {
-                printf("\nИнформация о площадках:\n");
+                printf("\nГ€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® ГЇГ«Г®Г№Г Г¤ГЄГ Гµ:\n");
                 for (int i = 0; i < numFlight; i++)
                 {
-                    printf("Площадка %d\n", i + 1);
-                    printf("Высота площадки: %g м.\n", objectsFlight[i].flightHeight);
-                    printf("Ширина площадки: %g м.\n", objectsFlight[i].flightWidth);
-                    printf("Длина площадки: %g м.\n", objectsFlight[i].flightLength);
+                    printf("ГЏГ«Г®Г№Г Г¤ГЄГ  %d\n", i + 1);
+                    printf("Г‚Г»Г±Г®ГІГ  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[i].flightHeight);
+                    printf("ГГЁГ°ГЁГ­Г  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[i].flightWidth);
+                    printf("Г„Г«ГЁГ­Г  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[i].flightLength);
                     printf("\n");
                 }
             }
             break;
 
         case 5:
-            printf("Введите название сохраняемого файла: ");
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ Г±Г®ГµГ°Г Г­ГїГҐГ¬Г®ГЈГ® ГґГ Г©Г«Г : ");
             scanf("%s", filename);
             save_to_file(filename);
             break;
@@ -114,7 +113,7 @@ int main()
         case 0:
             break;
 
-        default:printf("Некорректный ввод. Попробуйте ещё раз.\n");
+        default:printf("ГЌГҐГЄГ®Г°Г°ГҐГЄГІГ­Г»Г© ГўГўГ®Г¤. ГЏГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГҐГ№Вё Г°Г Г§.\n");
             break;
         }
     } while (choice != 0);
@@ -125,30 +124,30 @@ int main()
 void step_stairs_output()
 {
     int result;
-    printf("Введите длину одной плитки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г«ГЁГ­Гі Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsPlate[numPlate].plateLength);
-    printf("Введите ширину одной плитки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГёГЁГ°ГЁГ­Гі Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsPlate[numPlate].plateWidth);
-    printf("Введите высоту ступеньки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г±Г®ГІГі Г±ГІГіГЇГҐГ­ГјГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsStairs[numStairs].stepHeight);
-    printf("Введите ширину ступеньки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГёГЁГ°ГЁГ­Гі Г±ГІГіГЇГҐГ­ГјГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsStairs[numStairs].stepWidth);
-    printf("Введите длину ступеньки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г«ГЁГ­Гі Г±ГІГіГЇГҐГ­ГјГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsStairs[numStairs].stepLength);
-    printf("Введите количество ступенек: ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГіГЇГҐГ­ГҐГЄ: ");
     scanf("%d", &objectsStairs[numStairs].stepAmount);
 
-    printf("Вы ввели следующие данные:\n");
-    printf("Длина одной плитки: %g м.\n", objectsPlate[numPlate].plateLength);
-    printf("Ширина одной плитки: %g м.\n", objectsPlate[numPlate].plateWidth);
-    printf("Высота ступеньки: %g м.\n", objectsStairs[numStairs].stepHeight);
-    printf("Ширина ступеньки: %g м.\n", objectsStairs[numStairs].stepWidth);
-    printf("Длина ступеньки: %g м.\n", objectsStairs[numStairs].stepLength);
-    printf("Количество ступенек: %d\n", objectsStairs[numStairs].stepAmount);
+    printf("Г‚Г» ГўГўГҐГ«ГЁ Г±Г«ГҐГ¤ГіГѕГ№ГЁГҐ Г¤Г Г­Г­Г»ГҐ:\n");
+    printf("Г„Г«ГЁГ­Г  Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ: %g Г¬.\n", objectsPlate[numPlate].plateLength);
+    printf("ГГЁГ°ГЁГ­Г  Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ: %g Г¬.\n", objectsPlate[numPlate].plateWidth);
+    printf("Г‚Г»Г±Г®ГІГ  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsStairs[numStairs].stepHeight);
+    printf("ГГЁГ°ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsStairs[numStairs].stepWidth);
+    printf("Г„Г«ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsStairs[numStairs].stepLength);
+    printf("ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГіГЇГҐГ­ГҐГЄ: %d\n", objectsStairs[numStairs].stepAmount);
 
     result = step_stairs_calc(numStairs, numPlate);
 
-    printf("Для облицовки ступенек вам необходимо: %d плиток\n", result);
+    printf("Г„Г«Гї Г®ГЎГ«ГЁГ¶Г®ГўГЄГЁ Г±ГІГіГЇГҐГ­ГҐГЄ ГўГ Г¬ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г®: %d ГЇГ«ГЁГІГ®ГЄ\n", result);
 
     numStairs++;
 
@@ -176,27 +175,27 @@ int step_stairs_calc(int numStairs, int numPlate)
 void flight_stairs_output()
 {
     int result;
-    printf("Введите длину одной плитки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г«ГЁГ­Гі Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsPlate[numPlate].plateLength);
-    printf("Введите ширину одной плитки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГёГЁГ°ГЁГ­Гі Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsPlate[numPlate].plateWidth);
-    printf("Введите высоту площадки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г±Г®ГІГі ГЇГ«Г®Г№Г Г¤ГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsFlight[numFlight].flightHeight);
-    printf("Введите ширину площадки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ ГёГЁГ°ГЁГ­Гі ГЇГ«Г®Г№Г Г¤ГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsFlight[numFlight].flightWidth);
-    printf("Введите длину площадки (в метрах): ");
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г«ГЁГ­Гі ГЇГ«Г®Г№Г Г¤ГЄГЁ (Гў Г¬ГҐГІГ°Г Гµ): ");
     scanf("%lf", &objectsFlight[numFlight].flightLength);
 
-    printf("Вы ввели следующие данные:\n");
-    printf("Длина одной плитки: %g м.\n", objectsPlate[numPlate].plateLength);
-    printf("Ширина одной плитки: %g м.\n", objectsPlate[numPlate].plateWidth);
-    printf("Высота площадки: %g м.\n", objectsFlight[numFlight].flightHeight);
-    printf("Ширина площадки: %g м.\n", objectsFlight[numFlight].flightWidth);
-    printf("Длина ступеньки: %g м.\n", objectsFlight[numFlight].flightLength);
+    printf("Г‚Г» ГўГўГҐГ«ГЁ Г±Г«ГҐГ¤ГіГѕГ№ГЁГҐ Г¤Г Г­Г­Г»ГҐ:\n");
+    printf("Г„Г«ГЁГ­Г  Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ: %g Г¬.\n", objectsPlate[numPlate].plateLength);
+    printf("ГГЁГ°ГЁГ­Г  Г®Г¤Г­Г®Г© ГЇГ«ГЁГІГЄГЁ: %g Г¬.\n", objectsPlate[numPlate].plateWidth);
+    printf("Г‚Г»Г±Г®ГІГ  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[numFlight].flightHeight);
+    printf("ГГЁГ°ГЁГ­Г  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[numFlight].flightWidth);
+    printf("Г„Г«ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsFlight[numFlight].flightLength);
 
     result = flight_stairs_calc(numFlight, numPlate);
 
-    printf("Для облицовки площадки вам необходимо: %d плиток.", result);
+    printf("Г„Г«Гї Г®ГЎГ«ГЁГ¶Г®ГўГЄГЁ ГЇГ«Г®Г№Г Г¤ГЄГЁ ГўГ Г¬ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г®: %d ГЇГ«ГЁГІГ®ГЄ.", result);
 
     numFlight++;
 
@@ -223,36 +222,36 @@ double flight_stairs_calc(int numFlight, int numPlate)
 void save_to_file(char* filename) {
 
     if (numStairs == 0 && numFlight == 0) {
-        printf("Нет объектов для сохранения.\n");
+        printf("ГЌГҐГІ Г®ГЎГєГҐГЄГІГ®Гў Г¤Г«Гї Г±Г®ГµГ°Г Г­ГҐГ­ГЁГї.\n");
         return;
     }
 
     FILE* file = fopen(filename, "w");
 
     if (file == NULL) {
-        printf("Не удалось открыть файл для записи.\n");
+        printf("ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г®ГІГЄГ°Г»ГІГј ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ.\n");
         return;
     }
 
-    fprintf(file, "Лестницы:\n");
+    fprintf(file, "Г‹ГҐГ±ГІГ­ГЁГ¶Г»:\n");
     for (int i = 0; i < numStairs; i++) {
-        fprintf(file, "Лестница %d\n", i + 1);
-        fprintf(file, "Высота ступеньки: %g м.\n", objectsStairs[i].stepHeight);
-        fprintf(file, "Ширина ступеньки: %g м.\n", objectsStairs[i].stepWidth);
-        fprintf(file, "Длина ступеньки: %g м.\n", objectsStairs[i].stepLength);
-        fprintf(file, "Количество ступенек: %d\n", objectsStairs[i].stepAmount);
+        fprintf(file, "Г‹ГҐГ±ГІГ­ГЁГ¶Г  %d\n", i + 1);
+        fprintf(file, "Г‚Г»Г±Г®ГІГ  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsStairs[i].stepHeight);
+        fprintf(file, "ГГЁГ°ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsStairs[i].stepWidth);
+        fprintf(file, "Г„Г«ГЁГ­Г  Г±ГІГіГЇГҐГ­ГјГЄГЁ: %g Г¬.\n", objectsStairs[i].stepLength);
+        fprintf(file, "ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГіГЇГҐГ­ГҐГЄ: %d\n", objectsStairs[i].stepAmount);
         fprintf(file, "\n");
     }
 
-    fprintf(file, "Площадки:\n");
+    fprintf(file, "ГЏГ«Г®Г№Г Г¤ГЄГЁ:\n");
     for (int i = 0; i < numFlight; i++) {
-        fprintf(file, "Площадка %d\n", i + 1);
-        fprintf(file, "Высота площадки: %g м.\n", objectsFlight[i].flightHeight);
-        fprintf(file, "Ширина площадки: %g м.\n", objectsFlight[i].flightWidth);
-        fprintf(file, "Длина площадки: %g м.\n", objectsFlight[i].flightLength);
+        fprintf(file, "ГЏГ«Г®Г№Г Г¤ГЄГ  %d\n", i + 1);
+        fprintf(file, "Г‚Г»Г±Г®ГІГ  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[i].flightHeight);
+        fprintf(file, "ГГЁГ°ГЁГ­Г  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[i].flightWidth);
+        fprintf(file, "Г„Г«ГЁГ­Г  ГЇГ«Г®Г№Г Г¤ГЄГЁ: %g Г¬.\n", objectsFlight[i].flightLength);
         fprintf(file, "\n");
     }
 
     fclose(file);
-    printf("Данные успешно сохранены в файл '%s'.\n", filename);
+    printf("Г„Г Г­Г­Г»ГҐ ГіГ±ГЇГҐГёГ­Г® Г±Г®ГµГ°Г Г­ГҐГ­Г» Гў ГґГ Г©Г« '%s'.\n", filename);
 }
